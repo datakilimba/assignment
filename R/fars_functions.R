@@ -46,7 +46,7 @@ make_filename <- function(year) {
 #' @return a dataframe of two variables
 #' @export
 #'
-#' @importFrom magrittr %>%
+#' @import magrittr
 #'
 #' @examples
 #' fars_read_years(c("2013","2014"))
