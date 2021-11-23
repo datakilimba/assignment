@@ -1,4 +1,4 @@
-library(magrittr)
+#library(magrittr)
 #' Read a CSV file given a file name
 #'
 #' @param filename The name of the csv file to be read
