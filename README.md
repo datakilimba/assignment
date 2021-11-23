@@ -19,4 +19,6 @@ This is a basic example which shows you how to solve a common problem:
 library(assignment)
 ## basic example code
 ```
-
+<!-- badges: start -->
+  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/datakilimba/assignment?branch=master&svg=true)](https://ci.appveyor.com/project/datakilimba/assignment)
+  <!-- badges: end -->
