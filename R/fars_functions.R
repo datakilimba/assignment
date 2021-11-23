@@ -36,10 +36,10 @@ fars_read <- function(filename) {
 #' }
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("accident_%d.csv.bz2", year)
+  sprintf("accident_%d.rda", year)
 }
 
-#' Title
+#' Read accident data for a given set of years
 #'
 #' @param years A vector of years
 #'
