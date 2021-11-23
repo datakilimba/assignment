@@ -1,4 +1,3 @@
-#library(magrittr)
 #' Read a CSV file given a file name
 #'
 #' @param filename The name of the csv file to be read
@@ -12,10 +11,11 @@
 #' fars_read(test_file.csv)
 #' }
 fars_read <- function(filename) {
-  if(!file.exists(filename))
+  browser()
+  if(!file.exists(glue::glue("R/{filename}")))
     stop("file '", filename, "' does not exist")
   data <- suppressMessages({
-    readr::read_csv(filename, progress = FALSE)
+    readr::read_csv(glue::glue("R/{filename}"), progress = FALSE)
   })
   dplyr::tbl_df(data)
 }
@@ -36,7 +36,7 @@ fars_read <- function(filename) {
 #' }
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("accident_%d.rda", year)
+  sprintf("accident_%d.csv", year)
 }
 
 #' Read accident data for a given set of years
@@ -55,9 +55,9 @@ make_filename <- function(year) {
 #' fars_read_years("2013","2014")
 #' }
 fars_read_years <- function(years) {
-  browser()
+  #browser()
   lapply(years, function(year) {
-    browser()
+    #browser()
     file <- make_filename(year)
     tryCatch({
       dat <- fars_read(file)
@@ -70,7 +70,7 @@ fars_read_years <- function(years) {
   })
 }
 
-#' Title
+#' Accidents summarised by year
 #'
 #' @param years A vector of years of interest for which you want monthly
 #' aggregates of accidents
